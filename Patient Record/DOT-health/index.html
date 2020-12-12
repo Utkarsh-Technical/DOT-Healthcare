@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!--===============================================================================================-->
+      <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <title>Hello, world!</title>
+  </head>
+  <style>
+      @media(min-width: 1100px){
+        table{
+          width: 90% !important;
+          margin: 0 auto;
+          
+      }
+      }
+      table{
+          margin-top: 30px;
+          color: white !important;
+  font-weight: 300;
+      }
+      @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body{
+  background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+  background: linear-gradient(to right, #25c481, #25b7c4);
+  font-family: 'Roboto', sans-serif;
+  
+}
+th{
+    color: #fff;
+  text-transform: uppercase;
+
+
+}
+thead{
+    background-color: rgba(255,255,255,0.3);
+
+}
+tr{
+    cursor: pointer;
+}
+    /* Dropup container DIV */
+    *{
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+.menu {
+  position: fixed;
+  top: 80%;
+  left: 70px;
+  width: 0px;
+  transform: translate(-50%, 55%);
+}
+
+.toggle {
+  display: none;
+}
+
+.toggle + .style {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 5;
+    display: block;
+    max-width: 100px;
+    margin-bottom: 0;
+    background: teal;
+    color: #fff;
+    font-size: 2.5em;
+    text-align: center;
+   -webkit-transition: all .8s;
+   -moz-transition: all .8s;
+   -o-transition: all .8s;
+   -ms-transition: all .8s;
+   transition: all .8s;
+}
+
+.menu p{
+    max-width: 85px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 15px;
+    padding-top: 20px;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.toggle + .style:hover{
+	-webkit-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
+    -moz-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
+    -ms-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
+    -o-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
+    box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
+}
+
+.toggle:checked + .style {
+  transform: translate(-50%, -50%) scale(.5);
+}
+
+.menu input[type=checkbox] + label:before {
+    content: "";
+    position: absolute;
+}
+
+.toggle + .style:before, .toggle + .style:after {
+  content: "";
+  position: absolute;
+  margin: -3px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.toggle + .style:before {
+  width: 30px;
+  height: 0px;
+  left: 10px;
+  top: 25px;
+}
+
+.toggle + .style:after {
+  width: 0px;
+  height: 30px;
+  left: 25px;
+  top: 10px;
+}
+
+.toggle:checked + .style:before, .toggle:checked + .style:after {
+  transform: rotate(135deg);
+}
+
+.toggle ~ .tab {
+    position: absolute;
+    background: teal;
+    color: #fff;
+    width: 150px;
+    height: 70px;
+    left: 0px;
+    top: 0px;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.3s;
+    opacity: 0;
+    border-radius: 50%;
+}
+
+.toggle:checked ~ .tab {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.menu > .toggle:checked ~ .tab:nth-of-type(1) {
+  top: -122px;
+  left: 0px;
+  transition-delay: 0s;
+}
+
+.menu > .toggle:checked ~ .tab:nth-of-type(2) {
+  top: -44px;
+  left: 120px;
+  transition-delay: 0.125s;
+}
+
+.menu > .toggle:checked ~ .tab:nth-of-type(3) {
+  top: 56px;
+  left: 115px;
+  transition-delay: 0.25s;
+}
+
+.menu > .toggle:checked ~ .tab:nth-of-type(4) {
+  top: 122px;
+  left: 0px;
+  transition-delay: 0.375s;
+}
+
+.menu > .toggle:checked ~ .tab:nth-of-type(5) {
+  top: 56px;
+  left: -115px;
+  transition-delay: 0.5s;
+}
+
+.menu > .toggle:checked ~ .tab:nth-of-type(6) {
+  top: -74px;
+  left: -120px;
+  transition-delay: 0.625s;
+}
+
+.menu > .toggle:checked ~ .tab:nth-of-type(7) {
+  top: 0px;
+  left: -133.33333px;
+  transition-delay: 0.75s;
+}
+
+.menu > .toggle:checked ~ .tab:nth-of-type(8) {
+  top: -94.2809px;
+  left: -94.2809px;
+  transition-delay: 0.875s;
+}
+.experience{
+        position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; 
+  padding-top: 0%;
+  display: none;
+
+      }
+      .experience-body{
+          background-color: white !important;
+          border: 1px gray solid;
+          padding-top: 30px;
+          padding-left: 30px;
+          padding-bottom: 30px;
+          padding-right: 30px;
+      }
+      h1{
+          color: teal;
+          font-size: 25px;
+      }
+      h2{
+          color: gray;
+          font-size: 20px;
+      }
+      .month, .year{
+          max-width: 200px;
+          display: inline;
+      }
+      .save-btn{
+          background-color: teal;
+          margin-top: 30px;
+          margin-bottom: 30px;
+      }
+      .save-btn:hover{
+        background-color: teal;
+          
+      }
+      .experience-section{
+          margin-bottom: 10px;
+      }
+      .teal{
+          color: teal;
+      }
+      .cancel-icon{
+          float: right;
+          margin-top: -30px;
+      }
+      .project-des{
+          height: 100px;
+      }
+
+       .trash-img{
+         display: none;
+      }
+      @media(min-width: 1100px){
+          .trash-img{
+            margin-left: 50px;
+
+          }
+      } 
+      .btn-danger{
+        margin-left: 50%;
+        display: none;
+      }
+      .alert{
+        display: none;
+      }
+      nav{
+        background-color: #045206 !important;
+        color: white !important;
+        -webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 8px 6px -6px black;
+          position: fixed;
+      }
+    
+  </style>
+  <body>
+    <nav class="navbar navbar-light" style="background-color: #1ABC9C;">
+      <div class="col-9">
+          <form class="form-inline">
+              <input class="form-control col-11" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn my-2 my-sm-0 col-1" type="submit"><i class="fa fa-lg fa-search search-icon"></i></button>
+          </form>
+      </div>
+      <div class="col-1 row justify-content-center">
+          <i class="fa fa-lg fa-bell"></i>
+      </div>
+      <div class="col-2 row justify-content-center">
+          <p style="margin-bottom: 0;">Name</p>
+      </div>
+  </nav>  
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+Patient data updated
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Paitient code</th>
+            <th scope="col"> Name</th>
+            <th scope="col">Contact No</th>
+            <th scope="col">Address</th>
+            <th scope="col">Adhar card no</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>xxxxxxxxxxxxxxxxxxx<img src="images/trash.png" width="20px" height="20px" class="trash-img"></td>
+            
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            <td>@mdo<img src="images/trash.png" width="20px" height="20px" class="trash-img"></td>
+
+
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry the Bird</td>
+            <td>@twitter</td>
+            <td>@mdo</td>
+            <td>@mdo<img src="images/trash.png" width="20px" height="20px" class="trash-img"></td>
+            
+
+
+
+          </tr>
+        </tbody>
+      </table>
+      <div class="container">
+        <div class='menu'>
+          <input class='toggle' id='menu' type='checkbox'>
+          <label class='style' for='menu'>
+              <i aria-hidden="true"><img src="images/more.png" width="100px"></i>
+          </label>
+          <a class='tab' href='#'>
+              <p class="add">Add patient</p>
+          </a>
+          <a class='tab' href='#'>
+              <p class="update">Update Patient</p>
+          </a>
+          <a class='tab' href='#'>
+              <p class="dis">Discharge</p>
+          </a>
+         
+        </div><!-- menu -->
+        <button class="btn btn-danger">Cancel</button>
+    </div><!-- container -->
+    <div class="experience">
+        <div class="container experience-body">
+            <h1>Add Paitient </h1>
+            <img src="images/cancel.png" width="20px" class="cancel-icon">
+            <hr>
+            <div class="experience-section">
+              <h2>Paitient Name <span class="teal">*</span> </h2>
+              <input type="text" class="form-control" id="name" placeholder="">
+          </div>
+            <div class="experience-section">
+            <h2>Paitient Number <span class="teal">*</span> </h2>
+            <input type="number" class="form-control" id="number" placeholder="">
+        </div>
+        <div class="experience-section">
+            <h2>Contact Number <span class="teal">*</span> </h2>
+            <input type="number" class="form-control" id="contact" placeholder="">
+        </div>
+        
+        
+        <div class="experience-section">
+            <h2>Address <span class="teal">*</span> </h2>
+            <input class="form-control" id="address" placeholder="">
+
+        </div>
+        
+        <div class="experience-section">
+            <h2>Adhar card number <span class="teal">*</span> </h2>
+            <input type="number" class="form-control" id="adhar" placeholder="">
+        </div>
+       
+        
+        <button class="btn btn-primary save-btn" data-position="top-right">Save</button>
+        </div>
+
+    </div>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+      </script>
+		
+      <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
+      </script>
+      <script src="alert.js" type="text/javascript"></script>
+
+    <script>
+        $(".add").click(function(){
+               $(".experience").show( "blind", {direction: "vertical"}, 1000 );
+            });
+            $(".cancel-icon").click(function(){
+               $(".experience").hide( "blind", {direction: "vertical"}, 1000 );
+            });
+            $(".update").click(function(){
+               $(".experience").show( "blind", {direction: "vertical"}, 1000 );
+            });
+            $(".cancel-icon").click(function(){
+               $(".experience").hide( "blind", {direction: "vertical"}, 1000 );
+            });
+            $(".dis").click(function(){
+               $(".trash-img").show();
+               $('.btn-danger').show();
+            });
+            $(".btn-danger").click(function(){
+               $(".trash-img").hide();
+               $('.btn-danger').hide();
+            });
+           
+            $('.save-btn').on('click', function () {
+              var errorMessage = "";
+              var fieldMissing ="";
+              if($('#name').val() == ""){
+              fieldMissing += "<br>Name";
+              }
+              if($('#number').val() == ""){
+              fieldMissing += "<br>Patient Number";
+              }
+              if($('#contact').val() == ""){
+              fieldMissing += "<br>Contact Number";
+              }
+              if($('#address').val() == ""){
+              fieldMissing += "<br>Address";
+              }
+              if($('#adhar').val() == ""){
+              fieldMissing += "<br>Adhar card number";
+              }
+              if(fieldMissing != ""){
+                errorMessage += fieldMissing;
+              }
+              if(errorMessage != ""){
+                $.alert(errorMessage, {
+                title: 'These Fields are missing',
+                closeTime: 6000,
+                autoClose: true,
+                position: [$(this).data('position')],
+                withTime: false,
+                type: 'danger',
+                isOnly: true
+            });
+              }
+              else{
+               $(".experience").hide( "blind", {direction: "vertical"}, 1000 );
+               $.alert('patient data updated', {
+                title: 'Success',
+                closeTime: 3000,
+                autoClose: true,
+                position: [$(this).data('position')],
+                withTime: false,
+                type: 'success',
+                isOnly: true
+            });
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -3,7 +3,7 @@ body{
     font-family: 'Dosis', sans-serif;
     font-size: 1.8vh;
     width: 100vw;
-    background-color: #FFAB91;
+    background-color: #1ABC9C;
     background-image: url(../images/pic.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -53,7 +53,7 @@ body{
     display: flex;
     flex-direction: column;
     height: auto;
-    BACKGROUND-COLOR: rgba(255, 87, 34,0.6);
+    BACKGROUND-COLOR: rgba(16, 188, 157,0.6);
     justify-content: center;
     border-radius: 20px;
     box-shadow: 3px 0px 15px 1px rgba(0,0,0,0.5);
